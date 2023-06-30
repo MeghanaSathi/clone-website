@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>amazon</title>
+  <style>
+    .h8 {
+      background-color: black;
+      color: white;
+    }
+
+    .C7 {
+      padding: 20px 30px 30px 50px;
+      float: left;
+    }
+
+    .c3 {
+      width: 100%;
+      height: 60px;
+      background-color: blue;
+      position: fixed;
+      top: 0;
+      width: 100%
+    }
+
+    .c1 {
+      width: 300px;
+      height: 25px;
+      padding-left: 30px;
+      float: right;
+      margin-top: 17px;
+      margin-right: 400px;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .c2 {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 20px 30px 5px 30px;
+      float: right;
+    }
+
+    .c5 {
+      padding: 20px 30px 5px 30px;
+    }
+
+    .h1 {
+      text-align: center;
+      background-color: bisque;
+      color: black;
+      font-weight: 800;
+      font-style: italic;
+    }
+
+    .h2 {
+      text-align: center;
+      font-weight: 800;
+      font-style: italic;
+    }
+
+    .dropbtn {
+      background-color: blue;
+      color: white;
+      padding: 10px 24px;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: whitesmoke;
+      min-width: 200px;
+      z-index: 1;
+      margin-top: 40px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: whitesmoke;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="c3">
+    <img style="padding-right:40px;"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw6RpnS0eMWz1h90shDerglTfpo7V70GPM_F6c9i2tbxgrjk0YCY7fKaWgUeq38jmoug&usqp=CAU "
+      width="200" ,height="200">
+
+    <a href="#" class="c2"><img src="https://cdn-icons-png.flaticon.com/128/8181/8181590.png" width="20" ,height="30">
+      Cart</a>
+    <a href="#" class="c2">Become a seller</a>
+    <div class="dropdown ">
+      <button class="dropbtn" style="float:right">More</button>
+      <div class="dropdown-content ">
+        <a href="#"><img
+            src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1505/stalkerstudent150500195/40065278-bell-icon-symbol.jpg"
+            width="13" ,height="24"> Notification Preferences </a>
+        <a href="#"><img src="https://cdn.pixabay.com/photo/2012/04/14/16/26/question-34499_1280.png" width="13"
+            ,height="24"> 24/7 Customer Care </a>
+        <a href="#"><img
+            src="data:image/png;base64,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"
+            width="13" ,height="24"> Advertise </a>
+        <a href="#"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSny33CPk8MV6Avy1vgBYKRZD9OBxZ3ZGMV26CBJzdV2LsctekGa649UxZox3fgoGMGNe0&usqp=CAU"
+            width="13" ,height="24"> Download App </a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn " style="float:right">Login</button>
+      <div class="dropdown-content ">
+        <a href="#">New customer?></a>
+        <a href="#"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrMdI42hGiSPPiAeoix2dqS1r17DVngOdp696A6ic&s"
+            width="13" ,height="20">My Profile</a>
+        <a href="#"><img
+            src="data:image/jpeg;base64,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"
+            width="16" height="20">Flipkart plus </a>
+        <a href="#"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWUtjje5FOpSwQR9X_EfR6ySY7c2DXlLacm6dmeC2TV8G0WcBXZNaipBsOpqhUY-2Y-q8&usqp=CAU"
+            width="13" ,height="20">Orders</a>
+        <a href="#"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlx4E1DO0ZwH6BVAp6otU4T8VpUt-QMT46Xw&usqp=CAU"
+            width="13" ,height="20"> Wishlist</a>
+        <a href="#"><img
+            src="data:image/png;base64,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"
+            width="20" ,height="28">Rewards</a>
+        <a href="#"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgbee7htdAKvqzgUu6mh2hBu2_q51F9QApg&usqp=CAU"
+            width="16" ,height="24">GiftCards</a>
+      </div>
+    </div>
+    <input type="text" placeholder="search brand" class="c1">
+  </div>
+  <br><br>
+  <div>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/6c459ae5fc2ffc78.png?q=100"
+        width="100" ,height="100"><br>Top orders</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/962ede9fbddf94f4.png?q=100"
+        width="100" ,height="100"><br>Mobiles</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/18289de2eebb6654.png?q=100"
+        width="100" ,height="100"><br>fashion</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/da4e107d50844c45.png?q=100"
+        width="100" ,height="100"><br>Electronics</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/308474d15817c1b3.png?q=100"
+        width="100" ,height="100"><br>Beauty</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/a50deab37650e11b.png?q=100"
+        width="100" ,height="100"><br>Home and Furniture</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/e999774f38afcdb7.png?q=100"
+        width="100" ,height="100"><br>Appilances</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/5db4f944104bb869.png?q=100"
+        width="100" ,height="100"><br>Travel</a>
+    <a href="#" class="c5"><img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100"
+        width="100" ,height="100"><br>Grocery</a>
+  </div>
+  <div>
+    <a href="#" style="float:left"><img src="https://assets.tatacliq.com/medias/sys_master/images/44201379135518.jpg"
+        width="750"></a>
+    <a href="#" style="float:right;"><img src="https://assets.tatacliq.com/medias/sys_master/images/44201113780254.jpg"
+        width="750"></a>
+
+  </div>
+  <div>
+    <a href="#" style="float:left"><img src="https://assets.tatacliq.com/medias/sys_master/images/44201379069982.jpg"
+        width="750"></a>
+    <a href="#" style="float:right"><img src="https://assets.tatacliq.com/medias/sys_master/images/44201108537374.jpg"
+        width="750"></a>
+  </div>
+  <div>
+    <h1 class="h1">
+      <marquee> Incredible offers to grab</marquee>
+    </h1><br>
+  </div>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 170px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44218911391774.jpg" width="500"></a>
+    <a href="#" style="padding:20px 130px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44218912178206.jpg" width="500"></a>
+
+  </div>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 150px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201372581918.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px  5px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201364520990.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 50px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44218912440350.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 20px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201380053022.jpg" width="250"></a><br><br>
+  </div>
+  <div>
+    <div>
+      <h1 class="h1">
+        <marquee> Trending Kids Wear</marquee>
+      </h1><br>
+    </div>
+    <div>
+      <a href="#" style="padding:20px 50px 5px 190px;"><img
+          src="https://assets.tatacliq.com/medias/sys_master/images/44145520476190.jpg" width="250"></a>
+      <a href="#" style="padding:20px 50px  5px 70px;"><img
+          src="https://assets.tatacliq.com/medias/sys_master/images/44145520541726.jpg" width="250"></a>
+      <a href="#" style="padding:20px 50px 5px 90px;"><img
+          src="https://assets.tatacliq.com/medias/sys_master/images/44145520607262.jpg" width="250"></a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+      <a href="#" style="padding:20px 30px 5px 150px;"><img
+          src="https://assets.tatacliq.com/medias/sys_master/images/44313481216030.jpg" width="250"></a>
+      <a href="#" style="padding:20px 20px  5px 30px;"><img
+          src="https://assets.tatacliq.com/medias/sys_master/images/44313481773086.jpg" width="250"></a>
+      <a href="#" style="padding:20px 20px 5px 50px;"><img
+          src="https://assets.tatacliq.com/medias/sys_master/images/44145522114590.jpg" width="250"></a>
+      <a href="#" style="padding:20px 20px 5px 20px;"><img
+          src="https://assets.tatacliq.com/medias/sys_master/images/44313481838622.jpg" width="250"></a>
+    </div>
+    <h1 class="h1">
+      <marquee> Browse the most popular PIQ's</marquee>
+    </h1><br>
+  </div>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 170px;;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201377824798.jpg" width="500"></a>
+    <a href="#" style="padding:20px 130px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201377759262.jpg" width="500"></a>
+    <a href="#" style="padding:20px 30px 5px 170px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44218907394078.jpg" width="500"></a>
+    <a href="#" style="padding:20px 130px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201362948126.jpg" width="500"></a>
+    <a href="#" style="padding:20px 30px 5px 170px;;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201369042974.jpg" width="500"></a>
+    <a href="#" style="padding:20px 130px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44292679598110.jpg" width="500"></a>
+  </div>
+  <div>
+    <h1 class="h1">
+      <marquee>Best Selling Furniture</marquee>
+    </h1><br>
+  </div>
+  <div>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/jm9hfgw0/bed/h/g/g/king-na-rosewood-sheesham-bkwl05nhbs0401d1p-flipkart-perfect-original-imaf97cwhvgnwg95.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 2000</a>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/k6fd47k0/dining-set/b/a/h/6-seater-na-rosewood-sheesham-afk-79-abishaka-decor-warm-original-imafzvx6zryuz6zs.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 4000</a>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/k5y7tzk0/book-shelf/k/m/n/galvanised-steel-sj030405-flipkart-perfect-homes-studio-plain-original-imafzgsguethpnmz.jpeg?q=70"
+        width="200" ,height="200"><br>price at 1499</a>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/keg02a80/wardrobe-closet/f/y/f/particle-board-bewtri000500800620-kurlon-wenge-original-imafv49kgfrmmxbq.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 2999</a>
+    <a href="#" class="C7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/kf75fgw0/office-study-chair/z/g/w/carbon-steel-low-back-royal-ergonomic-desk-mesh-chair-in-brown-original-imafvzvprhk3xqdc.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 3999</a>
+    <a href="#" class="C7"><img
+        src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ-KMjpk16Q1KcuTUNnoBql7quDn_3C8lnU-iFA4uXqLeK7YOfmFIKNONzu6ojB4VwgJVL8Ooz_kYQnDopeCwnXOhdA8CbXj2kTFuczBhi3sNnSqBCdTRmG4w&usqp=CAE"
+        width="200" ,height="200"><br>Price at 4999</a>
+  </div>
+  <div>
+    <h1 class="h1">
+      <marquee>Fashion Brands On Discounts </marquee>
+    </h1>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/k66sh3k0/shirt/p/a/w/44-10944848-roadster-original-imafzp77h3j82jzh.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 2000</a>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/l13whow0/track-pant/f/f/b/m-15339942-nautica-original-imagcqqygvp8xhqz.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 4000</a>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/l3es13k0/t-shirt/r/4/k/xs-fc4354-4357-metronaut-original-imagejjvhqynyrwy.jpeg?q=70"
+        width="200" ,height="180"><br>price at 1499</a>
+    <a href="#" class="c7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/xif0q/kids-shoe/e/7/v/4-381854-puma-original-imagh4qtwnzey2rb.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 2999</a>
+    <a href="#" class="C7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/xif0q/shirt/w/a/5/40-2444702-mast-harbour-original-imafm32sgqnynywc-bb.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 3999</a>
+    <a href="#" class="C7"><img
+        src="https://rukminim1.flixcart.com/image/200/200/xif0q/shoe/a/s/c/-original-imaghgnn9xffzw8g.jpeg?q=70"
+        width="200" ,height="200"><br>Price at 4999</a>
+  </div>
+
+  <div>
+    <h1 class="h1">
+      <marquee>Festive Footware Bonanza </marquee>
+    </h1><br>
+    <h1 class="h2">The hottest styles of the season at great prices </h1>
+  </div>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 150px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44226535161886.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px  5px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44226535227422.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 50px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44226535292958.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 20px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44226535358494.jpg" width="250"></a><br><br>
+  </div>
+  <div>
+    <h1 class="h1">
+      <marquee> Best On Electronics </marquee>
+    </h1><br>
+  </div>
+  <div>
+    <a href="#" class="c7"><img src="https://assets.tatacliq.com/medias/sys_master/images/44227991633950.jpg"
+        width="200" ,height="200"><br> Price at 999</a>
+    <a href="#" class="c7"><img src="https://assets.tatacliq.com/medias/sys_master/images/44175819210782.jpg"
+        width="200" ,height="200"><br> Price at 249</a>
+    <a href="#" class="c7"><img src="https://assets.tatacliq.com/medias/sys_master/images/44290471297054.jpg"
+        width="200" ,height="200"><br> price at 1499</a>
+    <a href="#" class="c7"><img src="https://assets.tatacliq.com/medias/sys_master/images/44201376841758.jpg"
+        width="200" ,height="200"><br> Price at 2999</a>
+    <a href="#" class="C7"><img src="https://assets.tatacliq.com/medias/sys_master/images/44218915618846.jpg"
+        width="200" ,height="200"><br> Price at 3999</a>
+    <a href="#" class="C7"><img src="https://assets.tatacliq.com/medias/sys_master/images/44236167184414.jpg"
+        width="200" ,height="200"><br> Price at 4999</a>
+  </div>
+  <div>
+    <h1 class="h1">
+      <marquee> Festive Glamour </marquee>
+    </h1><br>
+  </div>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 170px;;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201383329822.jpg" width="500"></a>
+    <a href="#" style="padding:20px 130px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201383395358.jpg" width="500"></a>
+    <a href="#" style="padding:20px 30px 5px 170px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201383460894.jpg" width="500"></a>
+    <a href="#" style="padding:20px 130px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44201383526430.jpg" width="500"></a>
+  </div>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 150px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44312440668190.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px  5px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44292658266142.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 50px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44292658495518.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 20px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44312440799262.jpg" width="250"></a>
+  </div>
+  <div>
+    <h1 class="h1">
+      <marquee> Celebrate at Home</marquee>
+    </h1><br>
+  </div>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 150px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313480364062.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px  5px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313480495134.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 50px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313480560670.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 20px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313480626206.jpg" width="250"></a>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div>
+    <a href="#" style="padding:20px 30px 5px 150px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313479970846.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px  5px 30px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313480036382.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 50px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313480101918.jpg" width="250"></a>
+    <a href="#" style="padding:20px 20px 5px 20px;"><img
+        src="https://assets.tatacliq.com/medias/sys_master/images/44313480167454.jpg" width="250"></a>
+  </div>
+  <div>
+    <h1 class="h1">
+      <marquee> Celebrate Fabulous Discounts </marquee>
+    </h1><br><br>
+  </div>
+  <div>
+    <a href="#"><img src="https://assets.tatacliq.com/medias/sys_master/images/44220547170334.jpg" width="1500"></a>
+  </div>
+  <div>
+    <p>
+    <h2>Top Stories:Brand Directory</h2>
+    <h4>MOST SEARCHED FOR ON FLIPKART:</h4> Bounce Infinity E1iPhone 14 Coversvivo T1XOPPO Reno8 5GOPPO Reno8 Pro
+    5GNothing Phone 1Sell Old Mobile PhonesASUS TUF Gaming F15 Core i5 10th GenElectronics StoreOPPO A16KVivo Y33TOPPO
+    Reno7 5GBathroom Exhaust FanSamsung Window ACOPPO Reno7 Pro 5GiPhone 13iPhone 13 ProiPhone 13 Pro MaxiPhone 13
+    MiniGoogle Pixel 6a coversFlipkart QuickBooksFlipkart Help CentreOnline Boat StoreCovers from Rs 99Flipkart Track
+    OrdersFlipkart Manage OrdersFlipkart Return OrdersFlipkart Gift Cards StoreFlipkart Axis Bank Credit CardFlipkart
+    Pay Later<br>
+    <h4> MOBILES:</h4> iPhone 12 64GBiPhone 12 Pro 512GBiPhone 12 128GBVivo Y91iVivo Y11Vivo Y15Vivo Y50Vivo Y12Reno2
+    FOppo A12Oppo F15Oppo A31Samsung A71Samsung A51Samsung A31Realme X2iPhone 11iPhone 11 ProiPhone 11 Pro MaxMobile
+    Offersiphone x4G MobileNokia MobileSamsung MobileiphoneOppo MobileVivo Mobile<br>
+    <h4>CAMERA:</h4> Action CameraNikon CameraCanon CameraSony CameraCanon DSLRNikon DSLR<br>
+    <h4>LAPTOPS:</h4> Pro M2acer Ryzen 3 Dual Core 3250U - (8 GB/256 GB SSD/Windows 11 Home) Z2-493 Thin and Light
+    LaptopASUS Vivobook S14 OLED (2022)ASUS Zenbook 14 OLED (2022)Realme Book Prime Core i5 11th GenMicrosoft Surface Go
+    Pentium 128GBBranded LaptopsApple LaptopsAcer LaptopsLenovo LaptopsDell LaptopsAsus LaptopsHP LaptopsGaming Laptops2
+    in 1 LaptopsLaptopsDell latest laptops 2022HP latest laptops 2022Infinix INBook X1 Neo Series Celeron Quad Core - (8
+    GB/256 GB SSD/Windows 11 Home) XL22 Thin and Light LaptopMicrosoft Laptops12th Gen Intel Core Laptops<br>
+    <h4>TVS:</h4> TVPanasonic TVThomson TVVu TVRealme TVMotorola TVOnePlus TVsLG TVTVSony TVSamsung TVAndroid
+    TelevisionIffalcon TvMi TV<br>
+    <h4>LARGE APPLIANCES:</h4> Appliances End of Season SaleTelevisionWashing MachinesRefrigeratorsAir
+    ConditionersElectric CookersElectric Jug(Heater) / Travel KettlesInduction CooktopsInverters / stabilizerIrons /
+    Iron BoxMixer Grinder JuicerWet GrindersChimneysMicrowave OvensVacuum CleanersWater PurifierFanMarQ Customer
+    Care<br>
+    <h4>CLOTHING:</h4> ShirtsKurta PajamaKurtasMen T-ShirtsJeansSareeDressesKids DressesDesigner Salwar SuitsBraDesigner
+    KurtisTrack PantMen KurtasGym WearParty DressesPalazzo SuitsBoys ClothingGlovesNightyMaxi
+    DressesAnarkaliGownsCulottesSalwar SuitsKurtisDesigner SareesLeggingsShortsGeorgette SareesEthnic WearBriefs &
+    TrunksNike WatchesAscot TieCorset Tops TunicsLeather PU SkirtsCorset tops camisolesWomen magenta earringsNo collar
+    jacketsGreen dress materialBlack patiala kurta setMen camel shoes casualBlack pathaniWallets slingKhaki dressesKids
+    formal dressesMauve shirtsWomen henleyIndigo trousersLeopard dressesSleeveless shrugs<br>
+    <h4>FOOTWEAR:</h4> ShoesReebok ShoesNike ShoesPuma ShoesBootsBata ShoesWoodland ShoesSkechers ShoesSneakersWomens
+    BootsSports ShoesLoafersSandalsLotto Sports ShoesCasual ShoesWomens Skechers ShoesAsics Sports ShoesFormal
+    ShoesSchool Shoes<br>
+    <h4>GROCERIES:</h4> Grocery VoucherHand WashSoapCashew NutsSunflower OilEggsToilet CleanerHarpic Toilet
+    CleanerDettol SoapMustard OilBiscuitsCheesePatanjali AttaFortune OilAashirvaad AttaTea<br>
+    <h4> BEST SELLING ON FLIPKART:</h4> Ninja Calling Pro Bluetooth Calling Smartwatch 1.69 inch HD Display
+    SmartwatchBest Gas GeyserKitchen GeyserNutri BlendersPortable Air CoolerBest Air CoolerBagsHitachi Refrigerator 3
+    DoorBooksToysCandlesHelmetsWall ClocksBaby FoodChocolatesCyclesCalculatorsLipsticksMaskVertiv UPSFastrack
+    WatchesWalletsEarringsGold CoinsRealme Pad MiniHandbagsconekt SW2 SmartwatchMivi DuoPods a350Speaker Cleaner<br>
+    <h4> FURNITURE:</h4> setsWardrobesMattressesTV UnitsTablesChairsShelvesBean BagsOffice ChairsComputer TableOffice
+    TablesRed SofaWakefit BedsWhite SofaWakefit MattressGreen SofaBlack SofaBrown Sofa<br>
+    <h4>BGMH:</h4> ProteinHomeopathyBounce InfinityToysRusOnline GuitarBooks StoreMusical Instrument StoreEnergy
+    DrinksToysMilk Drink MixesRakhiIndian FlagProtein Supplements<br>
+    <h4>Flipkart:</h4> The One-stop Shopping Destination<br>
+    <h4>E-commerce is revolutionizing the way we all shop in India. Why do you want to hop from one store to another in
+      search of the latest phone when you can find it on the Internet in a single click? Not only mobiles. Flipkart
+      houses everything you can possibly imagine, from trending electronics like laptops, tablets, smartphones, and
+      mobile accessories to in-vogue fashion staples like shoes, clothing and lifestyle accessories; from modern
+      furniture like sofa sets, dining tables, and wardrobes to appliances that make your life easy like washing
+      machines, TVs, ACs, mixer grinder juicers and other time-saving kitchen and small appliances; from home
+      furnishings like cushion covers, mattresses and bedsheets to toys and musical instruments, we got them all
+      covered. You name it, and you can stay assured about finding them all here. For those of you with erratic working
+      hours, Flipkart is your best bet. Shop in your PJs, at night or in the wee hours of the morning. This e-commerce
+      never shuts down.
+      What's more, with our year-round shopping festivals and events, our prices are irresistible. We're sure you'll
+      find yourself picking up more than what you had in mind. If you are wondering why you should shop from Flipkart
+      when there are multiple options available to you, well, the below will answer your question.
+      Flipkart Plus<br>
+      <h4>A world of limitless possibilities awaits you - Flipkart Plus was kickstarted as a loyalty reward programme
+        for all its regular customers at zero subscription fee. All you need is 500 supercoins to be a part of this
+        service. For every 100 rupees spent on Flipkart order, Plus members earns 4 supercoins & non-plus members earn 2
+        supercoins. Free delivery, early access during sales and shopping festivals, exchange offers and priority
+        customer service are the top benefits to a Flipkart Plus member. In short, earn more when you shop more!
+        What's more, you can even use the Flipkart supercoins for a number of exciting services, like:</h3>
+        <h4>An annual Zomato Gold membership</h4>
+        <h4>An annual Hotstar Premium membership</h4>
+        <h4>6 months Gaana plus subscription</h4>
+        <h4>Rupees 550 instant discount on flights on ixigo</h4>
+        <h4> No Cost EMI</h4>
+        <h4> In an attempt to make high-end products accessible to all, our No Cost EMI plan enables you to shop with us
+          under EMI, without shelling out any processing fee. Applicable on select mobiles, laptops, large and small
+          appliances, furniture, electronics and watches, you can now shop without burning a hole in your pocket. If
+          you've been eyeing a product for a long time, chances are it may be up for a no cost EMI. Take a look ASAP!
+          Terms and conditions apply.</h4>
+        </p>
+  </div>
+  <div class="h8">
+
+  </div>
+</body>
+
+</html>
